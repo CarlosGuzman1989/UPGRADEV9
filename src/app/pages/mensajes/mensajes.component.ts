@@ -12,6 +12,7 @@ export class MensajesComponent implements OnInit {
   constructor(public wsSocket: WebsocketService, public chatService: ChatServiceService) { }
   
   ngOnInit() {
+    console.log('emitinedo mensajes');
     
   }
 
