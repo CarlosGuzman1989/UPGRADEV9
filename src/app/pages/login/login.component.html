@@ -1,0 +1,39 @@
+<!-- <div class="row justify-content-center">
+    <div class="col-9">
+
+        <form class="p-4" (ngSubmit)="ingresar()">
+             <input type="text"
+             [(ngModel)]="nombre"
+             name="nombre"
+             class="form-control"
+             placeholder="nombre de usuario"
+             autofocus
+             autocomplete="off">
+        </form>
+          
+    </div>
+</div> -->
+<!-- <div class="back"> -->
+<div class="back">
+  <div class="login-page">
+    <div class="form" *ngIf="registrado">
+      <form class="register-form" (ngSubmit)="crearCuenta()">
+        <input type="text" [(ngModel)]="nombre" name="nombre" autofocus placeholder="nombre" />
+        <input type="password" [(ngModel)]="password" name="password" autofocus placeholder="contraseña" />
+        <input type="text" placeholder="email" />
+        <button>Registrarse</button>
+        <!-- <p class="message">Ya estas registrado? <a href="#">Iniciar sesion</a></p> -->
+        <p class="message">¿No estas registrado? <a (click)="loginCuenta()">Crea una cuenta</a></p>
+      </form>
+    </div>
+    <div class="form" *ngIf="!registrado">
+      <form class="login-form" (ngSubmit)="iniciarSesion()">
+        <input type="text" [(ngModel)]="nombre" name="nombre" autofocus placeholder="usuario" />
+        <input type="password" [(ngModel)]="password" name="password" autofocus placeholder="contraseña" />
+        <button [disabled]="nombre.trim().length === 0">Iniciar session</button>
+        <!-- <p class="message">¿No estas registrado? <button (click)="crearCuenta()">Crea una cuenta</button></p> -->
+        <p class="message">¿No estas registrado? <a (click)="crearCuenta()">Crea una cuenta</a></p>
+      </form>
+    </div>
+  </div>
+</div>
